@@ -6,9 +6,19 @@ module.exports = () => layout(html`
   <hr>
   <form method="POST" action="/wiki/">
     
-    <div>PLACEHOLDER FOR AUTHOR NAME FIELD</div>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <div>
+        <input id="name" name="name" type="text"/>
+      </div>
+    </div>
     
-    <div>PLACEHOLDER FOR AUTHOR EMAIL FIELD</div>
+    <div>
+      <label for="email">E-mail</label>
+      <div>
+        <input id="email" name="email" type="email"/>
+      </div>
+    </div>
     
     <div class="form-group">
       <label for="title" class="col-sm-2 control-label">Page Title</label>
@@ -17,9 +27,22 @@ module.exports = () => layout(html`
       </div>
     </div>
 
-    <div>PLACEHOLDER FOR PAGE CONTENT TEXTAREA FIELD</div>
+    <div class="form-group">
+      <label for="content">Content</label>
+      <div>
+        <input id="content" name="content" type="textarea"/>
+      </div>
+    </div>
     
-    <div>PLACEHOLDER FOR PAGE STATUS INPUT FIELD</div>
+    <div>
+      <label>Status</label>
+      <div>
+        <input id="openStatus" name="status" type="radio"/>
+        <label for="openStatus">Open</label>
+        <input id="closedStatus" name="status" type="radio"/>
+        <label for="closedStatus">Closed</label>
+      </div>
+    </div>
 
     <div class="col-sm-offset-2 col-sm-10">
       <button type="submit" class="btn btn-primary">submit</button>
