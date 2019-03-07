@@ -10,7 +10,14 @@ app.use(express.static('public'));
 const router = require('./routes');
 app.use(router);
 
-const port = 3719;
-app.listen(port, () => {
-    console.log(`Listening on port ${port}!`);
-});
+const models = require('./models');
+
+async function init(){
+    await models.db.sync({force: true});
+    const port = 3719;
+    app.listen(port, () => {
+        console.log(`Listening on port ${port}!`);
+    });
+}
+
+init();
